@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: lightcoral;
+    color: #FFF;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.info, .education, .experience, .skills, .contact, .hobbies {
+    margin: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.info h2, .education h2, .experience h2, .skills h2 {
+    margin-top: 0;
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills li {
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    .info, .education, .experience, .skills, .contact, .hobbies {
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-column, .right-column {
+        padding: 1rem;
+    }
+}
+/* Breackpoints*/
+
+/* small windows 0px y 599px */
+@media screen and (min-width: 0px) and (max-width: 599px) {
+
+}
+
+/* medium windows 600px y 999px */
+@media screen and (min-width: 600px) and (max-width: 999px) {
+
+}
+
+/* big ones 1000px */
+@media screen and (min-width: 1000px) {
+
+}
+
+
+/* Styles in picture*/
+.profile-image {
+    text-align: center;
+    margin-top: 1rem;
+
+}
+
+.container {
+    display: flex;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    padding: 2rem;
+}
+
+.left-column {
+    background-color: #f2f2f2;
+}
+
+.right-column {
+    background-color: #ffffff;
+}
+
+
+
+ </style>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: lightslategray;">
+        <a class="navbar-brand" style="background-color: lightslategray;">CURRICULUM VITAE</a>
+        <button type="button" style="background-color: lightgray; border: #ddd;" ><a href="#info">Datos</a></button>
+        <button type="button" style="background-color: lightgray; border: #ddd;" ><a href="#contact">Contacto</a></button>
+        <button type="button" style="background-color: lightgray; border: #ddd;" ><a href="#education">Educacion</a></button>
+        <button type="button" style="background-color: lightgray; border: #ddd;" ><a href="#experience">Experiencia</a></button>
+        <button type="button" style="background-color: lightgray; border: #ddd;" ><a href="#skills">Habilidades</a></button>
+        <button type="button" style="background-color: lightgray; border: #ddd;" ><a href="#hobbies">Hobbies</a></button>
+
+    <div class="container">
+        <div class="left-column">
+            <header>
+                <h1>Axel Roberto Orozco Hernandez</h1>
+                <p>Estudiante de Ingeniería en Sistemas Computacionales</p>
+            </header>
+            <section id="info" class="info">
+                <h2>Datos del alumno</h2>
+                <p>Edad: 22 años</p>
+                <p>Sexo: Masculino</p>
+                <p>Fecha de nacimiento: 24-08-00</p>
+            </section>
+            <section id="contact" class="contact">
+                <h2>Información de Contacto</h2>
+                <p>Email: is730820@iteso.mx</p>
+                <p>Teléfono: (33) 2489-0206</p>
+                <p>Ubicación: Zapopan, Jal.</p>
+            </section>
+            <section id="education" class="education">
+                <h2>Educación</h2>
+                <p>Grado en Ingeniería Informática - Universidad ITESO</p>
+                <p>Año de Graduación: 2024</p>
+            </section>
+        </div>
+        <div class="right-column">
+            <div id="profile-image" class="profile-image">
+                <img src="IMG_3152.jpg">
+            </div>
+            <section id="experience" class="experience">
+                <h2>Experiencia Laboral</h2>
+                <p>Desarrollador Web</p>
+                <p>Desarrollador Full Stack</p>
+                <p>Asesor inmobiliario</p>
+                <p>Ventas</p>
+                <p>Gestor de Data Base</p>
+            </section>
+            <section id="skills" class="skills">
+                <h2>Habilidades</h2>
+                    <p>HTML, CSS, JavaScript</p>
+                    <p>Git, GitHub</p>
+                    <p>SQL</p>
+                    <p>Python, Java</p>
+                    <p>Trato con el cliente</p>
+            </section>
+            <section id="hobbies" class="hobbies">
+                <h2>Hobbies</h2>
+                <p>Salir con amigos</p>
+                <p>Hacer ejercicio</p>
+                <p>Viajar</p>
+                <p>Hacer cursos</p>
+            </section>
+            <aside class="additional-info">
+                <footer>
+                    &copy; ITESO 2023
+                </footer>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
