@@ -1,0 +1,24 @@
+{
+  "name": "tarea2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "styles": "sass src/sass:assets/css ",
+    "styles:dev": " sass src/sass:assets/css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node": "^19.6.1",
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.1",
+    "path": "^0.12.7",
+    "sass": "^1.58.3"
+  }
+}

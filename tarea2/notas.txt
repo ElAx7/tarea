@@ -1,0 +1,9 @@
+npm i 
+npm i node
+npm i nodemon
+npm i express
+npm i express-handlebars
+
+
+npm run styles
+npm run start 
