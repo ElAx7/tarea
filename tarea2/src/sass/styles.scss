@@ -1,0 +1,140 @@
+@import "variables";
+
+@mixin medidas-100 {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 5px;
+    padding: 1px;
+    font-family: $font-text;
+    border-radius: 20px;
+
+}
+
+header {
+    height: 200px;
+    padding-top: 20px;
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+    font-family: $font-text;
+    font-weight: 30px;
+}
+
+.buscador {
+    align-items: center;
+    text-align: center;
+    margin: 0px auto;
+    padding-bottom: 30px;
+    border-radius: 20px;
+}
+
+button[type="submit"] {
+    color: $color-boton;
+    height: 50px;
+    width: 150px;
+    font-size: $letra-bus;
+    border: none;
+
+}
+
+#barra {
+    margin-top: 50px;
+    width: 400px;
+    color: $color-letra;
+    height: 50px;
+    font-size: $letra-bus;
+    border-radius: 20px;
+
+}
+
+#boton {
+    border-radius: 20px;
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    border-radius: 20px;
+    background-color: #2c2c2c;
+
+
+}
+
+
+.col {
+    background-color: #2c2c2c;
+
+}
+
+.card-img-top {
+    border-radius: 20px;
+
+}
+
+.card {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(12, 224, 224, 0.2);
+    color: #f0f0f0;
+    background-color: #2c2c2c;
+
+
+}
+
+.card-body {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(12, 224, 224, 0.2);
+    background-color: #2c2c2c;
+
+}
+
+
+section {
+    background-color: $fondo;
+}
+
+@mixin tablet {
+    @media screen and (max-width:880px) {
+        @content;
+    }
+}
+
+@include tablet {
+    header {
+        height: 150px;
+        background-color: #2c2c2c;
+
+    }
+
+    header>h1 {
+        margin: 50px auto;
+
+    }
+
+    #barra {
+        margin-top: 30px;
+        width: 200px;
+        color: $color-letra;
+        height: 40px;
+        font-size: small;
+    }
+
+    button[type="submit"] {
+        color: $color-boton;
+        height: 30px;
+        width: 90px;
+        font-size: small;
+        border: none;
+    }
+}
