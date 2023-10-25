@@ -1,0 +1,23 @@
+
+.welcome-container {
+    text-align: center;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #3498db; /* Color de fondo azul */
+    color: #fff; /* Color del texto blanco */
+  }
+  
+  .footer {
+    background-color: #333; /* Color de fondo gris oscuro */
+    color: #fff; /* Color del texto blanco */
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
