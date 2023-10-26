@@ -16,11 +16,36 @@ import { Observable } from 'rxjs';
 export class AuthComponent {
   private isAuthenticated= false;
 
-  login() { 
-    this.isAuthenticated = true;
+  users: any [] = [
+    {
+      id: 1,
+      name: 'Axel',
+      username: 'Axel',
+      password: '123'
+    },
+    {
+      id: 1,
+      name: 'pepe',
+      username: 'pepe',
+      password: '123'
+    },
+  ];
+  sessionUser: any;
+  
+  login(username: string, password: string) {
+      let user = this.users.find(
+        (u) => u.username === username && u.password === password
+        );
+        if (user) {
+          this.sessionUser= user;
+          localStorage.setItem('session', JSON.stringify(this.sessionUser));
+        } 
+        return user;
   }
     logout() {
-    this.isAuthenticated = false;
+      this.sessionUser = undefined;
+      localStorage.removeItem('session');
+      this.router.navigate(['/']);
   }
 
   isAthenticatedUser() {
@@ -29,7 +54,9 @@ export class AuthComponent {
 
   constructor(private router: Router) { 
     this.isAuthenticated = false;
+    let session: any = localStorage.getItem('session');
+    if(session){
+      session = JSON.parse(session);
+    }
   }
-
-
 }

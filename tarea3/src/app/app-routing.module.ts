@@ -11,6 +11,8 @@ import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.
 import { EditGalleryComponent } from './pages/gallery/edit-gallery/edit-gallery.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthComponent } from './auth/auth.component';
+import { AppComponent } from './app.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,11 +20,16 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'auth', component: AuthComponent},
-  { path: 'photos', component: GalleryComponent, children: [
-    { path: '', component: GalleryListComponent }, 
-    { path: 'create', component: CreateGalleryComponent },
-    { path: ':id', component: GalleryDataComponent },
-    { path: ':id/edit', component: EditGalleryComponent }
+  {path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule)},
+  {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard]},
+  {path: '', component: AppComponent, children: [
+    { path: '', component: LoginComponent },
+    { path: 'photos', component: GalleryComponent, children: [
+      { path: '', component: GalleryListComponent }, 
+      { path: 'create', component: CreateGalleryComponent },
+      { path: ':id', component: GalleryDataComponent },
+      { path: ':id/edit', component: EditGalleryComponent }
+    ]},
   ] },
   { path: '**', component: NotFoundComponent }
 ];

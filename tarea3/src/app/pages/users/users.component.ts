@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 
 import { User } from 'src/app/shared/interfaces/user';
 
@@ -8,6 +9,11 @@ import { User } from 'src/app/shared/interfaces/user';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent {
+  constructor(private authService: AuthService) { 
+  }
+  logout() {
+    this.authService.logout();
+  }
 
   selectedUser: User = { name: '', email: '' };
 

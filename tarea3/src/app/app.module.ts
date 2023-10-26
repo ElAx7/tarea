@@ -16,9 +16,9 @@ import { GalleryListComponent } from './pages/gallery/gallery-list/gallery-list.
 import { CreateGalleryComponent } from './pages/gallery/create-gallery/create-gallery.component';
 import { EditGalleryComponent } from './pages/gallery/edit-gallery/edit-gallery.component';
 import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.component';
-import { UserDataComponent } from './pages/users/user-data/user-data.component';
 import { RegisterComponent } from './pages/register/register.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,14 +34,15 @@ import { RegisterComponent } from './pages/register/register.component';
     CreateGalleryComponent,
     EditGalleryComponent,
     GalleryDataComponent,
-    UserDataComponent,
     RegisterComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

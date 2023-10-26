@@ -1,18 +1,42 @@
 import { Component } from '@angular/core';
+import { Form } from '@angular/forms';
+
+import{ FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  correo: string = '';
-  contrasena: string = '';
+  form: FormGroup = this.fb.group({
+    correo: ['', Validators.required],
+    contrasena: ['', Validators.required],
+  });
 
-  onSubmit() {
-    // Aquí puedes enviar los datos de inicio de sesión al servidor
-    console.log('Correo: ' + this.correo);
-    console.log('Contraseña: ' + this.contrasena);
+constructor(
+  private authService: AuthService, 
+  private fb: FormBuilder,
+  private router: Router
+  ) { }
 
-    // Agrega tu lógica para enviar los datos al servidor y procesar la respuesta
+  login(){
+    const user = this.authService.login(
+      this.form.get('correo')?.value, 
+      this.form.get('contrasena')?.value
+    );
+
+    if (user === undefined) {
+      alert('Usuario o contraseña incorrectos');
+    }else{
+      this.router.navigateByUrl('/admin')
+    }
+  }
+  
+  register() {
+    this.register();
+
   }
 }
