@@ -1,0 +1,43 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+      border-color: #007bff; // Color de enfoque
+    }
+
+    &::placeholder {
+      color: #999; // Color del marcador de posición
+    }
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #ccc; // Color cuando está deshabilitado
+      cursor: not-allowed;
+    }
+  }
+}
